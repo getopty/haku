@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  loadbalancer:
+    image: haproxy
+    ports:
+      - '8000:8000'
+      - '8443:8443'
+    depends_on:
+      - jenkins
+    restart: always
+    volumes:
+      - ./conf:/usr/local/etc/haproxy
+      - ./ssl:/usr/local/etc/ssl
+
+  jenkins:
+    image: jenkins
+    volumes:
+      - /Volumes/HARU/jenkins:/var/jenkins_home
+
