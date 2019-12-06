@@ -14,6 +14,7 @@ services:
 
   jenkins:
     image: jenkins
+    restart: always
     volumes:
       - /Volumes/HARU/jenkins:/var/jenkins_home
 
