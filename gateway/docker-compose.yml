@@ -13,7 +13,7 @@ services:
       - ./ssl:/usr/local/etc/ssl
 
   jenkins:
-    image: jenkins
+    image: jenkins/jenkins:lts
     restart: always
     volumes:
       - /Volumes/HARU/jenkins:/var/jenkins_home
